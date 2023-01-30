@@ -32,7 +32,7 @@ As an ID use `chktex-conda` if you want to have ChkTeX to be automatically insta
 ## Configuration
 
 You can configure `chktex` rules, e.g. warnings to exclude, via a local `chktexrc` (Windows) or `.chktexrc` (Unix/Linux/Mac) configuration in the project root, named  depending on your operating system[^2].
-Check the [ChkTeX manual](https://www.nongnu.org/chktex/ChkTeX.pdf) for the extensive configuration options or start from an example configuration, e.g. [https://github.com/overleaf/chktex/blob/master/chktexrc]. This configuration should then also be used by IDE's, editors and language servers[^3] that use ChkTeX as a LaTeX linter. A minimal example could be a configuration that sets some command line arguments to `chktex`, e.g.
+Check the [ChkTeX manual](https://www.nongnu.org/chktex/ChkTeX.pdf) for the extensive configuration options or start from an example configuration, e.g. https://github.com/overleaf/chktex/blob/master/chktexrc. This configuration should then also be used by IDE's, editors and language servers[^3] that use ChkTeX as a LaTeX linter. A minimal example could be a configuration that sets some command line arguments to `chktex`, e.g.
 
 ```
 CmdLine
@@ -46,9 +46,11 @@ CmdLine
 }
 ```
 
-## Similar project
+## Similar projects
 
-- [https://flake.parts/options/pre-commit-hooks-nix.html](flake-parts pre-commit-hooks.nix) for [NixOS](https://nixos.org) contains a ChkTeX hook.
+Please contact me if this is a duplicate project, I thought a hook like this ought to exist already, but didn't find any with a simple google search. However, I found the following projects which have some overlap:
+
+- [flake-parts pre-commit-hooks.nix](https://flake.parts/options/pre-commit-hooks-nix.html) for [NixOS](https://nixos.org) contains a ChkTeX hook.
 - [mKaloer/pre-commit gist](https://gist.github.com/mKaloer/f9488142f76b29a2e2e6): *A* custom pre-commit script that can be copied manually to `.git/hooks/pre-commit`. It's simple, and might be all you need, but does not integrate with *the* `pre-commit` framework.
 - [jonasbb/pre-commit-latex-hooks](https://github.com/jonasbb/pre-commit-latex-hooks) : Custom LaTeX pre-commit hooks, independent of available linters. That means you won't see the errors in your editor/IDE until you actually try to commit.
 
