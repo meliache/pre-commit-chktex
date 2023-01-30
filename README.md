@@ -15,7 +15,14 @@ repos:
     rev: v0.2.0  # use the latest tagged version in the releases of this repository
     hooks:
       - id: chktex-conda  # install and use chktex via a conda
-      # - id: chktex-system  # alternative: uncomment to use system chktex
+
+      # alternative: use the following line to use the system chktex
+      # - id: chktex-system
+
+      # optional: By default the chktex-hooks runs over all TeX files. You can
+      # configure the hook to only run on your main TeX file. Then, I would also
+      # recommend setting the `CmdLine { --inputfiles }` option in your chktexrc
+      # to follow `\input` statements. files: ["main.tex"]
 ```
 
 As an ID use `chktex-conda` if you want to have ChkTeX to be automatically installed via `conda`[^1] into a dedicated environment or use `chktex-system` to use the conda-executable that is available system-wide. If you already have ChkTeX installed, the system-version requires less setup but it has the disadvantage of not being fixed to a specific ChkTeX version. If you have multiple contributors, they might use different ChkTeX releases. `chktex-conda` installs the exact version specified in the [environment.yml](environment.yml) file.
@@ -24,7 +31,19 @@ As an ID use `chktex-conda` if you want to have ChkTeX to be automatically insta
 ## Configuration
 
 You can configure `chktex` rules, e.g. warnings to exclude, via a local `chktexrc` (Windows) or `.chktexrc` (Unix/Linux/Mac) configuration in the project root, named  depending on your operating system[^2].
-Check the [ChkTeX manual](https://www.nongnu.org/chktex/ChkTeX.pdf) for the extensive configuration options or start from an example configuration, e.g. https://github.com/overleaf/chktex/blob/master/chktexrc. This configuration should then also be used by IDE's, editors and language servers[^3] that use ChkTeX as a LaTeX linter. The simplest use-case is setting command line arguments to `chktexrc`.
+Check the [ChkTeX manual](https://www.nongnu.org/chktex/ChkTeX.pdf) for the extensive configuration options or start from an example configuration, e.g. https://github.com/overleaf/chktex/blob/master/chktexrc. This configuration should then also be used by IDE's, editors and language servers[^3] that use ChkTeX as a LaTeX linter. A minimal example could be a configuration that sets some command line arguments to `chktex`, e.g.
+
+```
+CmdLine
+{
+    # follow \input statements
+    --inputfiles
+    # show verbose warnings
+    -v 2
+    # don't warn on literal quote `"`, babel can work with that
+    --nowarn 18
+}
+```
 
 ## Similar project
 
