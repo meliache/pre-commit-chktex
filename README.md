@@ -12,7 +12,7 @@ Create a `.pre-commit-confing.yaml` file in the root of your repository with the
 ``` yaml
 repos:
   - repo: https://github.com/meliache/pre-commit-chktex
-    rev: v0.2.0  # use the latest tagged version in the releases of this repository
+    rev: v0.2.1  # use the latest tagged version in the releases of this repository
     hooks:
       - id: chktex-conda  # install and use chktex via a conda
 
