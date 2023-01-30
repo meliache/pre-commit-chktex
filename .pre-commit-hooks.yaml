@@ -1,12 +1,12 @@
 - id: chktex-conda
   alias: chktex
   name: "Look for typographic errors in LaTeX with ChkTeX."
-  entry: "chktex -v 2 --localrc"
+  entry: "chktex -v 2"
   types: [file, tex]
   language: "conda"
 
 - id: chktex-system
   name: "Look for typographic errors in LaTeX with ChkTeX."
-  entry: "chktex -v 2 --localrc"
+  entry: "chktex -v 2"
   types: [file, tex]
   language: system

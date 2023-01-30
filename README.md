@@ -23,8 +23,8 @@ As an ID use `chktex-conda` if you want to have ChkTeX to be automatically insta
 
 ## Configuration
 
-This pre-commit hook executes `chktex` with the `--localrc` command line option. Therefore, you can configure `chktex` rules, e.g. warnings to exclude, via a local `chktexrc` (Windows) or `.chktexrc` (Unix/Linux/Mac) configuration in the project root, named  depending on your operating system[^2].
-Check the [ChkTeX manual](https://www.nongnu.org/chktex/ChkTeX.pdf) for the extensive configuration options or start from an example configuration, e.g. https://github.com/overleaf/chktex/blob/master/chktexrc. This configuration should then also be used by IDE's, editors and language servers[^3] that use ChkTeX as a LaTeX linter.
+You can configure `chktex` rules, e.g. warnings to exclude, via a local `chktexrc` (Windows) or `.chktexrc` (Unix/Linux/Mac) configuration in the project root, named  depending on your operating system[^2].
+Check the [ChkTeX manual](https://www.nongnu.org/chktex/ChkTeX.pdf) for the extensive configuration options or start from an example configuration, e.g. https://github.com/overleaf/chktex/blob/master/chktexrc. This configuration should then also be used by IDE's, editors and language servers[^3] that use ChkTeX as a LaTeX linter. The simplest use-case is setting command line arguments to `chktexrc`.
 
 ## Similar project
 
