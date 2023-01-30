@@ -1,0 +1,5 @@
+name: "chktex-pre-commit-hook"
+channels:
+  - "conda-forge"
+dependencies:
+  - "chktex=1.7.8"
