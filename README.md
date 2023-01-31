@@ -48,6 +48,8 @@ Please contact me if this is a duplicate project, I thought a hook like this oug
 - [mKaloer/pre-commit gist](https://gist.github.com/mKaloer/f9488142f76b29a2e2e6): *A* custom pre-commit script that can be copied manually to `.git/hooks/pre-commit`. It's simple, and might be all you need, but does not integrate with *the* `pre-commit` framework.
 - [jonasbb/pre-commit-latex-hooks](https://github.com/jonasbb/pre-commit-latex-hooks) : Custom LaTeX pre-commit hooks, independent of available linters. That means you won't see the errors in your editor/IDE until you actually try to commit.
 
+## Footnotes
+
 [^1]: The conda version requires a conda installer. If you're not using conda anyway, I recommend installing a minimal conda installer like [Miniconda]( https://docs.conda.io/en/latest/miniconda.html) or the newer [Micromamba](https://mamba.readthedocs.io/en/latest/installation.html#micromamba). The latter requires setting the `PRE_COMMIT_USE_MICROMAMBA=1` environment variable (see the [pre-commit conda](https://pre-commit.com/index.html#conda) documentation).
 
 [^2]: Personally, I create a `chktexrc` file and a relative symbolic link to `.chktexrc`, on linux for example with `ln -s chktexrc .chktexrc`, and commit both, to ensure it works on all systems.
